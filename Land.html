@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/houses.css">
+  <link rel="stylesheet" href="search.css">
+
+<link rel="website icon" type="png" href="/images/image-removebg-preview.png" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <title>Gryffindor-House</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <style>
+   
+    
+  </style>
+</head>
+
+<body >       
+    
+        
+            <div class="header-background">           
+        <header class="p-2 text-bg-dark-opacity-0  "   >
+            
+              <div class="d-flex flex-wrap align-items-center justify-content-center ">
+                <a href="/" class="d-flex align-items-center pr-2 mb-lg-0 text-white text-decoration-none">
+                 <img src="/images/image-removebg-preview.png" class="svg-image" alt=""width="130" height="100" role="img" aria-label="Bootstrap" >
+                </a>
+                
+                
+              </div>           
+          </header>
+            </div>
+            
+            
+            <div class="container2 " >
+                <div class="header" id="Creature">
+                    <h1 style="font-family: 'Dancing Script', cursive;font-size: 80px;text-align:center;margin-top: 25px;color:rgb(179, 137, 79);font-weight:200">Habitants of Land</h1>
+                    <div id="creature-container"></div>
+                </div>
+
+               
+
+            
+
+              <script>
+                const creatures = [
+                {
+                    name: "Giant",
+                    description: "A giant was a very large humanoid magical being which could potentially grow to approximately twenty-five feet tall, but other than their height, they greatly resembled humans. They were not as intelligent as wizards, but were capable of communication. Giants had their own language for communication.",
+                    image: "/images/Giant.webp"
+                },
+                {
+                    name: "Bowtruckle",
+                    description: "The Bowtruckle was a hand-sized, insect-eating, tree dwelling magical beast with long sharp fingers (two on each hand), brown eyes, and a general appearance of a flat-faced stick figure made of bark and twigs, which served well as camouflage in its natural habitat. They were immensely difficult to spot.",
+                    image:"/images/Bowtruckle.webp"
+                },
+                {
+                    name: "Niffler",
+                    description: "The Niffler was a magical beast with a long snout and a coat of black, fluffy fur.They were attracted to shiny things, which made them wonderful for locating treasure, but that also meant that they could wreak havoc if kept (or let loose) indoors. Nifflers in general were usually harmless.",
+                    image:"/images/Niffler.webp"
+                },
+                {
+                  name: "Troll",
+                  description: " Large and strong creatures that can be quite dangerous. A troll is encountered in the first book, 'Harry Potter and the Philosopher's Stone.'",
+                  image:"/images/Mountain_Troll.webp"
+                },
+                {
+                name: "Blast Ended Skrewt",
+                description: "The Blast-Ended Skrewt is a magical hybrid beast bred by Rubeus Hagrid in the autumn of 1994, by cross-breeding Manticores and Fire Crabs. It is described as resembling pale, slimy, deformed shell-less lobsters or scorpions covered in grey, shiny armor. The males have stingers and the females have suckers to suck blood. They are aggressive and have a repulsive appearance. They shoot fire from their rear end and are affiliated with Rubeus Hagrid and the Ministry of Magic.",
+                image:"/images/Blast-Ended_Skrewt.webp"
+                },
+            ];
+            
+                function createEntityLayout(title, description,image) {
+                  const entityHTML = `
+                  <div id="shopify-section-template--16096473219241__carousel" class="shopify-section reveal">
+                    <div class="featured">
+                      <div class="featured__wrapper">
+                        <div class="featured__carousel ltr">
+                          <div class="featured__panel">
+                            <div class="featured__frame">
+                              <span class="line top"></span>
+                              <span class="line left"></span>
+                              <span class="line right"></span>
+                              <span class="line bottom"></span>
+                              <span class="square tl"></span>
+                              <span class="square tr"></span>
+                              <span class="square bl"></span>
+                              <span class="square br"></span>
+                            </div>
+                              <div class="character-container" >
+                              <div  class="left-character" >
+                              <h2 class="featured__title" ">${title}</h2>
+                                <p>${description}</p>
+                                <a href="/creatures/land/${title}" style="z-index:10; position:absolute"> Read more...</a>
+                              </div>
+                              <div class="right-character">
+                                <div class="image-frame">
+                                  <img src="${image}" alt="Image" class="img1">
+                                </div>                          
+                              </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              `;
+              return entityHTML;
+            }
+        
+            const creatureContainer = document.getElementById('creature-container');
+            creatures.forEach((creature) => {
+                creatureContainer.innerHTML += createEntityLayout(creature.name, creature.description,creature.image);
+            });
+        
+          </script>
+      
+         
+
+
+            </div>
+<script>
+            function reveal() {
+                var reveals = document.querySelectorAll(".reveal");
+              
+                for (var i = 0; i < reveals.length; i++) {
+                  var windowHeight = window.innerHeight;
+                  var elementTop = reveals[i].getBoundingClientRect().top;
+                  var elementVisible = 150;
+              
+                  if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                  } else {
+                    reveals[i].classList.remove("active");
+                  }
+                }
+              }
+              
+              window.addEventListener("scroll", reveal);
+              
+        </script> 
+
+        <div id="shopify-section-footer" class="shopify-section"><footer class="footer lazy-bg loaded">
+            
+            <div class="footer__wrapper">
+              <div class="footer__menu">
+                <div class="footer__logo">
+                  <a href="https://www.wizardingworld.com/" target="_blank" onclick="trackCTA('Icon Clicked', 'Wizarding World', 'footer', 'https://www.wizardingworld.com/')"><img src="/images/footer-logo.png" class="footer-logo"></i></a>
+                </div>  
+            </div>
+          </div>
+          </footer>
+        </div>
+</body>
+
+</html>
+

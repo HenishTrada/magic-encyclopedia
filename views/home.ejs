@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<link rel="website icon" type="png" href="images/image-removebg-preview.png" >
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/creature.css">
+  <link rel="stylesheet" href="css/creature1.css">
+  
+  <link rel="website icon" type="png" href="../public/images/image-removebg-preview.png" >
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <title>WMC-0.4</title>
+  <style>
+   
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    .btn:hover{
+        background-color: rgb(24, 203, 48);
+        border-color: none; 
+    }
+    a:hover{
+        
+        color: rgb(255, 255, 255);
+    }
+ 
+    a.Search{
+        color: black;
+    }
+   
+  </style>
+</head>
+
+<body>       
+   
+        <div class="background ">
+        
+            <div class="container1" id="header">
+            <div class="header-background">           
+        <header class="p-3 text-bg-dark-opacity-0 mb-2 "   >
+            
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center pr-2 mb-2 mb-lg-0 text-white text-decoration-none">
+                 <img src="../images/white-logo.png" class="svg-image" alt=""width="60" height="50" role="img" aria-label="Bootstrap" >
+                </a>
+        
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                  <li><a href="#header" class="nav-link first px-2 text-white ml-3">Home</a></li>
+                  <li><a href="#Creature" class="nav-link px-2 text-white">Creatures</a></li>
+                  <li><a href="#Quiz-&-Puzzle" class="nav-link px-2 text-white">Quiz & Puzzle</a></li>
+                  <li><a href="#Characters" class="nav-link px-2 text-white">Characters</a></li>
+                  <li><a href="#Hogwart's-Houses" class="nav-link px-2 text-white">Houses</a></li>
+                </ul>
+               
+                <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                  <input type="search" class="form-control form-control-dark text-bg-black" placeholder="Search..." aria-label="Search">
+                </form> -->
+        
+                <div class="text-end" style="display:flex; flex-direction:row">
+                    <form action="/login" method="post">
+                        <button class="btn btn-warning me-2" id="login">
+                            <input type="submit" name="btn" value="<%= btnValue %>">
+                        </button>
+                    </form>
+
+                   
+                </div>
+
+              </div>           
+          </header>
+            </div>
+            </div>    
+        </div>
+    <!-- Adding creature list of hogwart lagacy -->
+    <div class="header" id="Creature">
+        <h1 style="font-family: 'Sacramento';font-size: 80px;text-align:center;color:rgb(255, 255, 255);font-weight:400">Creature</h1>
+    </div>
+    <div class="container2 " >
+     
+      <div class="right-side ">
+        <div class="images-creature">
+          <div class="parent-creature">
+            <a href="/creatures" >
+                <img class="image1-creature reveal"src="./images/hi.jpg" alt="Dragon" width="233px" height="292px">    
+                <img class ="frame1-creature" src="./images/Group 6 1.png" width="279px" >
+            </a>
+          </div>
+          <div class="parent-creature">
+            <a href="/creatures">
+                <img class="image1-creature reveal"src="./images/hii2.jpg" alt="Dragon" width="233px" height="292px">
+                <img class ="frame1-creature" src="./images/Group 6 1.png" width="279px"  >
+            </a>
+          </div>
+          <div class="parent-creature">
+            <a href="/creatures">
+                <img class="image1-creature reveal"src="./images/hi3.jpg" alt="Dragon" width="233px" height="292px">
+                <img class ="frame1-creature" src="./images/Group 6 1.png" width="279px" >
+            </a>
+          </div>
+          <div class="parent-creature">
+            <a href="/creatures">
+                <img class="image1-creature reveal"src="./images/hii3.jpg" alt="Dragon" width="233px" height="292px">
+            <img class ="frame1-creature" src="./images/Group 6 1.png" width="279px" >
+            </a>
+          </div>
+
+          
+        </div>
+
+        </div>
+            <div class="view-more" >
+                <div class="view-more reveal">
+                    <form action="/creatures" method="post">
+                    <button type="submit">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFEUlEQVR4nO2abWwURRjHhyAxETXFtwRNfElJtAkvMSZWTdRErWIk1LI7dxXxJX6oBBKN0QTF6rb0bmfurmDQFFMbg7Tc7e4zpQotYoVy2zsbIxEJNRSIYgmYAlELqVpse3dr5updr+ddKblNddr7Jc+Hu9nd2ee/M/+Z3RmE8uTJkyePPXRsr3quE1xHQkwdDIF61tSqm75oUK5DM4GO7e++FmY0FmbUSo2Q4T693//OPWg6YwaqS0KMDKcnnxSBqYNmoPIlNB0Jg3JrCNRfUhM+ffRrKxoZts6cOGR1tdQm/o+ZWnUDAMxG04Vv6yvmhMDdnf7EIyPDVoLf+/usA211ybJO3WWG/W/OQ9MB01+9PlOTP9XzlZXK8MU/rO6gP9UXTnY0Vi5BomMarr3pyXfqNdaO2pXWwfYGKxqNJEWIxaJWb7c5zheCmvIiEhlTd3WlC2AGqizmcVpAsRX0K9bQ4MC41vDz8W/GRAA1FtQ3bLQsNAuJiKlVv5+pC7RtWR0XgEdr3Wrr/LnepACRkaF/HW/qNfuCW5UCJBrtjcpNfMKTnlD7x28kBeDBu8RPh/fHkz/V05VxqOw03CfaG5WFSDS+3LahKASuH1KT2fvJunECJKLZW27t2/ZWRgFGhXv9AlOlx5FotDf65nYartZEIns+ejWjAKPhsHZ/uCbuFam+0bZlzWg5wRGD4HVC+kIIXG+HGYm0bHp+AgHGgnnL45GlXG/0rZqLRKO1fu1yoHL/ZAS4VBgEHwYfvgOJhuZ1FgKVv7dFBIp/1YnjMSQaoOCrgWBmhwgJX0CiYVloFr9xoHLUFiGoHNilLLsKiQaj0pMGwedtag2HNOK8HYkGePCdQOQem8zxnE4cDyHRaFKevRYI3mmTCH+BipciQX2hyiA4ZkN3+K1Fffp6JCKMSKUGwQM2tIT1SFQ06iwCKh/PSQCKg0hkPn2vtAAIPpaDAEeRqADg2UDlTTl2gzASkc88y68xCG7NfUSQ3Ug0wIVvASIftMEABwKe8puRSOjUcR8QfMaGITBiUOxAIgFULgcqX7Qh+UFGZIxm5EsRibeee5EofL556ZVA5abczS4e3c2+FbchUfDXPnODQXDIpuT38HcJJAq627EQqNxrS/JE3sznDEgUdOp4Aii+kPMwR/GIQfBaJBJAcAW/8dyfvNwPBD+CRCGoPHwFEPyBTU3+x2b3iruQSNNaoPLuy2reJGtZGNz4RiQKoOIFubzNjYWD9/mG+vqKOUgUdrjK5hsU99nQ36PgliuRaBgEeybXpyd0+j+ZaHP6BEDlAzk++T6/S6BpbTpAsMnNjPGFTs+ln3ZaqziikVLxvu+nYqjZu4AxQfKM4J276gVc4Ulnq/JCgUHwycsY+mLNRPYJufafDaB4EZvctHcI3PLLaDqi167gc//hbMnrNL4uWIKmMwbFr2Ra7WFUOgYbVy1AMwFGscOg+Dug8gij8lmDSHVCvcPnyZMnT54cPn+3kZXzmlxl8/nevhbqLAoQ6W6NSg8wt/Qg39LCP3FpbulR/s2QB/NIy3gkfvMyfgw/lp/Dzx29hrOIX5Nfm9fB60L/h21wLV5nIfNJxXx/byKZqQqN16lKxfwepnxHqU7KlgDFT0110tkifi9eafGUCcC80uIZLQCHNzutxlkYUKXieHOc+qRL4nXX/AddAGWAG5M/xQS5cXEDAxXfn2qCcZPLYoLJ8n9MkJ+bboK8DjtN8G/deeVli2jjGgAAAABJRU5ErkJggg==">
+                    <p style="color: #f7fbfe;">Explore More..</p>
+                    </button>
+                    </form>
+                </div>    
+        </form>
+
+      </div>
+      <!-- <script type="text/javascript">
+        document.getElementById("view-more").onclick = function () {
+            location.href = "creature.ejs";
+        };
+    </script> -->
+    </div>
+    <div class="header reveal" id="Quiz-&-Puzzle">
+          <h1 class="Creature" style="font-family: 'Sacramento';font-size: 80px;color:rgb(255, 255, 255);padding-bottom:0%">Quiz & Puzzles</h1> 
+        </div>
+        <div class="container2 reveal" style="display: flex; flex-wrap:wrap; justify-content:center;align-content:center">
+          <form action="/creatureQuiz" method="post" style="margin-right: 5%;float:left">
+          <button id ="myButton">
+            <div class="Frame1 ">
+               
+            <div class="svg" id="Quiz-&-Puzzle">
+                <svg>
+                    <text  x="40%" y="40%" dy=".35em" text-anchor="middle">
+                        QUIZ TIME!
+                    </text>
+                </svg>
+            </div class="quiz_img">  
+                <img src="./images/quizLanding.svg">
+             
+            </div>
+            <div>
+                <p class="Quiz-title" style="margin-top: 3%;">Creature Quiz</p>
+            </div>
+            
+        </button>
+        </form>
+
+        <script type="text/javascript">
+            document.getElementById("myButton").onclick = function () {
+                location.href = "quiz.html";
+            };
+        </script>
+
+        <form action="/charQuiz" method="post" style="margin-right: 5%;float:left">
+            <button id ="myButton2">
+              <div class="Frame1 ">
+                 
+              <div class="svg" id="Quiz-&-Puzzle">
+                  <svg>
+                      <text  x="40%" y="40%" dy=".35em" text-anchor="middle">
+                          QUIZ TIME!
+                      </text>
+                  </svg>
+              </div class="quiz_img">  
+                  <img src="./images/quizLanding.svg">
+               
+              </div>
+              <div>
+                  <p class="Quiz-title" style="margin-top: 3%;">Character Quiz</p>
+              </div>
+              
+          </button>
+          </form>
+
+          <script type="text/javascript">
+              document.getElementById("myButton2").onclick = function () {
+                  location.href = "quiz2.html";
+              };
+          </script>
+        
+          <form action="/storyLineQuiz" method="post" style="margin-right: 5%;float:left">
+            <button id ="myButton3">
+              <div class="Frame1 ">
+                 
+              <div class="svg" id="Quiz-&-Puzzle">
+                  <svg>
+                      <text  x="40%" y="40%" dy=".35em" text-anchor="middle">
+                          QUIZ TIME!
+                      </text>
+                  </svg>
+              </div class="quiz_img">  
+                  <img src="./images/quizLanding.svg">
+               
+              </div>
+              <div>
+                  <p class="Quiz-title" style="margin-top: 3%;">Story Line Quiz</p>
+              </div>
+              
+          </button>
+          </form>
+          <script type="text/javascript">
+              document.getElementById("myButton3").onclick = function () {
+                  location.href = "quiz3.html";
+              };
+          </script>
+        
+            
+          </div>
+        </div>
+
+        <div class="header reveal" id="Characters" >
+          <h1 style="font-family: 'Sacramento';font-size: 80px;color:rgb(255, 255, 255);font-weight:400">Characters</h1>
+      </div>
+      <div class="media-container reveal" >
+        <div class="media-scroller">
+          <!--   Group 1 -->
+          <div class="media-group" id="group-1">
+            <form action="/gryffindor" method="get">
+                <button id="Frame1"> 
+                    <div class="media-element">
+                        <img src="./images/Frame 11.svg" alt="" />
+                    </div>
+                </button>
+            </form>
+            <form action="/hufflepuff" method="get">
+                <button id="Frame2"> 
+                    <div class="media-element">
+                        <img src="./images/Frame 21.svg" alt="" />
+                    </div>
+                </button>
+            </form>
+            
+            
+          </div>
+          <!-- Group 2   -->
+          <div class="media-group" id="group-2">
+            <form action="/ravenclaw" method="get">
+                <button id="Frame3"> 
+                    <div class="media-element">
+                        <img src="./images/Frame 31.svg" alt="" />
+                    </div>
+                </button>
+            </form>
+            <form action="/slytherin" method="get">
+                <button id="Frame4"> 
+                    <div class="media-element">
+                        <img src="./images/Frame 41.svg" alt="" />
+                    </div>
+                </button>
+            </form>
+                      
+            </div>
+        </div>
+           
+      
+    <div class="container reveal" id="Houses"style="width:100%">
+   
+    <div class=" house" id="Hogwart's-Houses">
+        <div class="outer-house-description" style="width:100%;text-align:center">
+            <div><h1 class="house-name" >Hogwarts House Hub</h1> </div>
+             <div class="house-description reveal" style="text-align:center; padding-bottom:25px">
+                These four houses form an integral part of the Hogwarts School of Witchcraft and Wizardry, where students are sorted into their respective houses based on their traits and characteristics during the Sorting Ceremony at the beginning of each school year. Throughout the year, the houses compete for points, and the house with the most points is awarded the prestigious House Cup.
+            </div>
+        </div>
+        <div class="Desktop1" style="width: 100%;  position: relative;display:flex;flex-direction:column ">
+            <div class="container reveal " style="width:100%;">
+                <div class="Rectangle1" >
+                <img class="Gryffindor1"  src="./images/Gryffindor.png" />
+                <div class="info-div" >
+                    <div class="trans" >Gryffindor is known for its brave and courageous members. The house was founded by Godric Gryffindor and values traits such as chivalry, daring, and nerve. Gryffindor students are often known for their bravery and willingness to stand up for what is right. Notable members of Gryffindor include Harry Potter, Hermione Granger, and Ron Weasley.</div>
+                </div>
+            </div>
+            </div>
+            <div class="container reveal" style="width:100%">
+                <div class="Rectangle2 " >              
+                    <div class="info-div" >
+                        <div class="trans" >Slytherin is known for its ambitious, cunning, and resourceful members. It was founded by Salazar Slytherin. Slytherin students are often associated with the desire for power and success. They value ambition and can be highly determined in achieving their goals. Notable members of Slytherin include Draco Malfoy and Severus Snape.</div>               
+                    </div>
+                <img class="Slytherin1" src="./images/Slytherin.png" />
+                
+            </div>
+            </div>
+            <div class="container reveal" style="width:100%">
+                <div class="Rectangle3 " >
+                <img class="Hufflepuff1" src="./images/Hufflepuff.png" />    
+                <div class="info-div" >
+                    <div class="trans" >Hufflepuff is a house that values hard work, dedication, patience, loyalty, and fair play. It was founded by Helga Hufflepuff. Hufflepuff students are known for their kindness and inclusivity. They value friendship and are often loyal to their friends. Notable members of Hufflepuff include Cedric Diggory and Newt Scamander.</div>              
+                </div>
+            </div>
+            </div>
+            <div class="container reveal" style="width:100%">
+                <div class="Rectangle4" >      
+                    <div class="info-div" >
+                        <div class="trans" >Ravenclaw is the house of intelligence, creativity, wit, and wisdom. It was founded by Rowena Ravenclaw. Ravenclaw students are known for their pursuit of knowledge and their love for learning. They value intellect and are often seen as highly intelligent individuals. Notable members of Ravenclaw include Luna Lovegood and Cho Chang.</div>                   
+                    </div>
+            <img class="Ravenclaw1" src="./images/Ravenclaw.png" />
+                
+            </div>
+            </div>
+        </div>       
+    </div>
+</div>   
+<div id="shopify-section-footer" class="shopify-section reveal">
+    <footer class="footer lazy-bg loaded">         
+      <div class="footer__wrapper">
+        <div class="footer__menu">
+          <div class="footer__logo">
+            <a href="https://www.wizardingworld.com/" target="_blank" onclick="trackCTA('Icon Clicked', 'Wizarding World', 'footer', 'https://www.wizardingworld.com/')"><img src="images/footer-logo.png" class="footer-logo"></i></a>
+          </div>                                   
+      </div>
+    </div>
+    </footer>
+  </div>
+
+<script>
+    let scrollContainer = document.querySelector(".media-scroller");
+  
+
+    scrollContainer.addEventListener("wheel", (evt) =>{
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaX;
+        scrollContainer.style.scrollBehavior = "auto";
+    })
+   
+
+</script>  
+
+<script>
+
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+      
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          var elementVisible = 150;
+      
+          if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+          } else {
+            reveals[i].classList.remove("active");
+          }
+        }
+      }
+      
+      window.addEventListener("scroll", reveal);
+      
+</script>
+</body>
+
+</html>

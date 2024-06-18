@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/megicalCreature-list.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+
+<link rel="website icon" type="png" href="/images/image-removebg-preview.png" >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <title>WMC-4.0</title>
+  <style>
+    .text-white{
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      padding: 8px;
+  }
+  .star {
+    visibility:hidden;
+    font-size:30px;
+    cursor:pointer;
+}
+.star:before {
+  content: "\2605";
+  position: absolute;
+  visibility:visible;
+  color:white;
+
+}
+.star:checked:before {
+  content: "\2606";
+  position: absolute;
+  color: white;
+
+}
+  </style>
+</head>
+
+<body >       
+    
+
+            <div class="header-background">           
+        <header class="text-bg-dark-opacity-0  "   >
+            
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <form action="/" method="post">
+                
+                    <a href="/" class="d-flex align-items-center pr-2 mb-lg-0 text-white text-decoration-none">
+                      <img src="../images/white-logo.png" class="svg-image" alt=""width="70" height="60" role="img" aria-label="Bootstrap" >
+                    </a>
+                  
+                </form>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" style="margin-left: 0px; ">
+                  <li><a href="../creatures/air" class="nav-link first px-2 text-white ml-3" style="font-size: 18px;">Air</a></li>
+                  <li><a href="../creatures/land" class="nav-link px-2 text-white " style="font-size: 18px;">Land</a></li>
+                  <li><a href="../creatures/water" class="nav-link px-2 text-white" style="font-size: 18px;">Water</a></li>
+                  <li><a href="../creatures/forest" class="nav-link px-2 text-white" style="font-size: 18px;">Forest</a></li>
+                  <!-- <li><a href="../creatures/fire" class="nav-link px-2 text-white">Fire</a></li> -->
+                    <!-- <h2 class="Title-magical-creature" style="text-align: center;">
+                        Magical Creature
+                    </h2> -->
+                </ul>
+                <div class="wrapper" style="margin: 0px;">
+                  <div class="container autocomplete" style="margin:20px">
+                    <form action="/search" role="search" method="post" class="search-form form" >
+                      <label>
+                          <span class="screen-reader-text">Search for...</span>
+                          <input id="searchInput" type="search" class="search-field" name="creatureName" placeholder="Search creature.." autocomplete="off" value="" name="s" title=""/>
+                          <ul style="background-color: white;" id="autocompleteList"></ul>
+                      </label>
+                      <input type="submit" class="search-submit button" value="&#xf002" />
+                  </form>
+                  </div>
+                </div>
+              </div>           
+          </header>
+            </div>
+
+            <div class="Title-magical-creature" id="Creature" style="align-items:center; display:flex; justify-content:center; ">
+              <h3 style="font-size:80px; margin:2%"> Magical Creature</h3>
+          </div>
+
+   
+            <div class="container2 ">
+              <div id="creature-container"></div>
+                  <% creatureList.forEach(item => { %>
+            <div id="shopify-section-template--16096473219241__carousel" class="shopify-section reveal"> 
+                <div class="featured">
+                  <div class="featured__wrapper" > 
+                    <div class="featured__carousel ltr">  
+                      
+                      <div class="featured__panel">
+                        <form class="form" action="/favs" method="post"> 
+                          <div style="float:right">
+                            <input class="star" type="checkbox" name="checkbox" style="z-index:10;position:relative; float:right;"value="<%= item._id %>" id="<%= item._id %>" onchange="this.form.submit()"
+                            />
+                          <label for="<%= item._id %>"> Add to Favourite </label>
+                          </div>
+                          
+                                                   
+                          <br/>
+                          <h2 class="featured__title" style="color: white;"><%= item.name %></h2>
+                          <p style="color: white;"><%= item.description %></p>  
+                        </form>
+                        
+                         
+                        <div class="featured__frame"> 
+                          <span class="line top"></span>
+                          <span class="line left"></span>
+                          <span class="line right"></span>
+                          <span class="line bottom"></span>
+                          <span class="square tl"></span>
+                          <span class="square tr"></span>
+                          <span class="square bl"></span>
+                          <span class="square br"></span>
+                        </div>
+                                 
+                        </div>                        
+                    </div>                    
+                  </div>                  
+                </div>                
+              </div>
+            <% }) %>
+        </div>
+
+        <script>
+          function reveal() {
+              var reveals = document.querySelectorAll(".reveal");
+            
+              for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+            
+                if (elementTop < windowHeight - elementVisible) {
+                  reveals[i].classList.add("active");
+                } else {
+                  reveals[i].classList.remove("active");
+                }
+              }
+            }
+            
+            window.addEventListener("scroll", reveal);
+            
+      </script> 
+
+        <div id="shopify-section-footer" class="shopify-section reveal">
+          <footer class="footer lazy-bg loaded">         
+            <div class="footer__wrapper">
+              <div class="footer__menu">
+                <div class="footer__logo">
+                  <a href="https://www.wizardingworld.com/" target="_blank" onclick="trackCTA('Icon Clicked', 'Wizarding World', 'footer', 'https://www.wizardingworld.com/')"><img src="/images/footer-logo.png" class="footer-logo"></i></a>
+                </div>                                   
+            </div>
+          </div>
+          </footer>
+        </div>
+        <script>
+          // frontend/script.js
+
+const searchInput = document.getElementById('searchInput');
+const autocompleteList = document.getElementById('autocompleteList');
+
+function fetchSuggestions(query) {
+  return fetch(`/api/data`)
+    .then(response => response.json())
+    .then(data => {
+      return data.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      return [];
+    });
+}
+
+function displayResults(results) {
+  autocompleteList.innerHTML = '';
+  results.forEach(item => {
+    const listItem = document.createElement('li');
+    listItem.textContent = item;
+    autocompleteList.appendChild(listItem);
+  });
+}
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value;
+  if (query.length > 1) {
+    fetchSuggestions(query).then(results => {
+      displayResults(results);
+    });
+  } else {
+    autocompleteList.innerHTML = '';
+  }
+});
+
+autocompleteList.addEventListener('click', (event) => {
+  if (event.target.nodeName === 'LI') {
+    searchInput.value = event.target.textContent;
+    autocompleteList.innerHTML = '';
+  }
+});
+
+        </script>
+</body>
+</html>
+
+
